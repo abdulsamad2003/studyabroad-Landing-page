@@ -6,7 +6,7 @@ type SectionShellProps = {
   subheading?: string;
   action?: ReactNode;
   children: ReactNode;
-  variant?: "default" | "muted";
+  variant?: "default" | "muted" | "transparent";
   compact?: boolean;
 };
 
@@ -22,14 +22,15 @@ export default function SectionShell({
   const sectionPadding = compact ? "py-12 md:py-14" : "py-20";
   const headerMargin = compact ? "mb-6" : "mb-10";
 
+  const surfaceClass =
+    variant === "muted"
+      ? "bg-slate-50/80"
+      : variant === "transparent"
+        ? "bg-transparent"
+        : "";
+
   return (
-    <section
-      className={
-        variant === "muted"
-          ? `bg-slate-50/80 ${sectionPadding}`
-          : sectionPadding
-      }
-    >
+    <section className={`${surfaceClass} ${sectionPadding}`.trim()}>
       <div className="mx-auto max-w-6xl px-4">
         <div
           className={`${headerMargin} flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between`}

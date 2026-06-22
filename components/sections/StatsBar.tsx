@@ -17,10 +17,10 @@ export default function StatsBar({ config }: StatsBarProps) {
   const icons = statIcons[config.id];
 
   return (
-    <section className="relative z-20 -mt-16 px-4 pb-10 md:-mt-20 md:pb-14">
-      <div className="mx-auto max-w-6xl">
+    <section className="relative z-20 px-4 pb-10 md:pb-14">
+      <div className="mx-auto max-w-6xl -translate-y-1/2 -mb-14 md:-mb-16">
         <div
-          className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xl shadow-slate-200/50"
+          className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white/95 shadow-xl shadow-slate-900/10 backdrop-blur-md"
           style={{ borderTopWidth: "3px", borderTopColor: config.primaryColor }}
         >
           <div className="grid grid-cols-2 divide-x divide-y divide-slate-100 md:grid-cols-4 md:divide-y-0">

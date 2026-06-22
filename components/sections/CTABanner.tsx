@@ -12,7 +12,7 @@ export default function CTABanner({ config }: CTABannerProps) {
   const content = getHomepageContent(config.id).ctaBanner;
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div
           className="overflow-hidden rounded-2xl px-8 py-10 shadow-lg md:px-10 md:py-12"

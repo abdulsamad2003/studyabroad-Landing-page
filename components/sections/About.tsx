@@ -14,7 +14,7 @@ export default function About({ config }: AboutProps) {
     <SectionShell
       eyebrow={content.eyebrow}
       heading={content.heading}
-      variant="muted"
+      variant="transparent"
       compact
     >
       <div className="max-w-3xl space-y-4">

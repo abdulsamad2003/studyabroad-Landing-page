@@ -17,7 +17,7 @@ export default function ProductsServices({ config }: ProductsServicesProps) {
     <SectionShell
       eyebrow={content.eyebrow}
       heading={content.heading}
-      variant="muted"
+      variant="transparent"
       compact
     >
       <div className="grid gap-6 lg:grid-cols-3">

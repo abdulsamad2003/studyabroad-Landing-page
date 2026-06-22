@@ -16,7 +16,7 @@ export default function CategoryCards({ config }: CategoryCardsProps) {
     <SectionShell
       heading={content.heading}
       subheading={content.subheading}
-      variant="muted"
+      variant="transparent"
     >
       <div className="grid gap-6 md:grid-cols-2">
         {content.items.map((item) => (

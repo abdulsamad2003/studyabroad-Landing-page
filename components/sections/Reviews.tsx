@@ -39,7 +39,7 @@ export default function Reviews({ config }: ReviewsProps) {
     <SectionShell
       eyebrow={content.eyebrow}
       heading={content.heading}
-      variant="muted"
+      variant="transparent"
       compact
     >
       <div className={gridClass}>

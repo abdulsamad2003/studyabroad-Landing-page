@@ -3,6 +3,7 @@ import { getDomainConfig } from "@/config";
 import type { DomainConfig } from "@/config/types";
 import type { HomeSectionName } from "@/lib/homepage-sections";
 import { resolveHomepageSections } from "@/lib/homepage-sections";
+import { groupHomepageSections } from "@/lib/homepage-gradient-band";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import StatsBar from "@/components/sections/StatsBar";
@@ -17,6 +18,7 @@ import IntakeTimeline from "@/components/sections/IntakeTimeline";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQs from "@/components/sections/FAQs";
 import BlogPreview from "@/components/sections/BlogPreview";
+import HomeGradientBand from "@/components/sections/HomeGradientBand";
 
 const sectionComponents: Record<
   HomeSectionName,
@@ -49,10 +51,23 @@ export function renderHomepageSection(
 export default async function HomePage() {
   const config = await getDomainConfig();
   const sections = resolveHomepageSections(config.sections);
+  const groups = groupHomepageSections(sections);
 
   return (
     <>
-      {sections.map((sectionName) => renderHomepageSection(sectionName, config))}
+      {groups.map((group) => {
+        if (group.type === "section") {
+          return renderHomepageSection(group.name, config);
+        }
+
+        return (
+          <HomeGradientBand key={`gradient-${group.sections[0]}`} config={config}>
+            {group.sections.map((sectionName) =>
+              renderHomepageSection(sectionName, config),
+            )}
+          </HomeGradientBand>
+        );
+      })}
     </>
   );
 }

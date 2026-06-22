@@ -36,7 +36,7 @@ export default function QuickMatcher({ config }: QuickMatcherProps) {
       eyebrow={content.eyebrow}
       heading={content.heading}
       subheading={content.subheading}
-      variant="muted"
+      variant="transparent"
     >
       <div className="grid gap-5 md:grid-cols-3">
         {content.tools.map((tool) => {

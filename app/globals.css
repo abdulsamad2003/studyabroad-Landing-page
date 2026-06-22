@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
   font-family: var(--font-sans);
   font-size: 1rem;
@@ -133,6 +133,18 @@ a {
 
 ::selection {
   background: color-mix(in srgb, var(--color-primary) 20%, white);
+}
+
+/*
+ * Homepage band wrapper (StatsBar → CTABanner).
+ * Gradient is painted on an absolute layer behind transparent sections.
+ */
+.home-gradient-band {
+  position: relative;
+}
+
+.home-gradient-band__layer {
+  z-index: 0;
 }
 
 /* Chat widget — fully isolated typography (no p/h inheritance from hero) */
